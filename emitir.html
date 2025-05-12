@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solicitar Licença - Carteira para Pescaria</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="shortcut icon" href="https://www.gov.br/pt-br/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
         html, body {
@@ -51,7 +53,11 @@
                     step = 2;
                     showStep(2);
                 } else {
-                    alert('Por favor, preencha todos os campos');
+                    Swal.fire({
+                        icon: "error",
+                        title: "Error...",
+                        text: "Por favor, preencha todos os campos!",
+                    });
                 }
             });
 
@@ -143,7 +149,11 @@
                     document.getElementById('confirm-type').textContent = catType === 'embarcada' ? 'Embarcada' : 'Desembarcada';
                     document.getElementById('confirm-price').textContent = catType === 'embarcada' ? 'R$60,00' : 'R$20,00';
                 } else {
-                    alert('Por favor, preencha todos os campos');
+                    Swal.fire({
+                        icon: "error",
+                        title: "Error...",
+                        text: "Por favor, preencha todos os campos!",
+                    });
                 }
             });
             
